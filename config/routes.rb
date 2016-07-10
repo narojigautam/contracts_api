@@ -2,4 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root :to => redirect('/admin')
+  namespace :api, defaults: {format: 'json'} do
+    resources :investors
+  end
 end

@@ -5,8 +5,10 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.6'
 gem 'devise'
 gem 'rails_admin'
-# Use sqlite3 as the database for Active Record
-gem 'pg'
+gem 'rack-cors', :require => 'rack/cors'
+gem 'devise_token_auth'
+#gem 'pg'
+gem 'mysql2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
