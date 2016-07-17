@@ -10,6 +10,11 @@ class Api::InvestorsController < ApplicationController
     render json: @investor
   end
 
+  def show
+    @investor = Investor.find(params[:id])
+    render json: @investor
+  end
+
   private
 
   def investor_params
