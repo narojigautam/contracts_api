@@ -7,8 +7,8 @@ gem 'devise'
 gem 'rails_admin'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'devise_token_auth'
-#gem 'pg'
-gem 'mysql2'
+gem 'pg'
+# gem 'mysql2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
