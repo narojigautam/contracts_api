@@ -1,4 +1,4 @@
-class Api::InvestmentsController < ApplicationController
+class Api::InvestmentsController < Api::ApiApplicationController
 
   def index
     @investments = params[:investor_id] ? Investment.where(investor_id: params[:investor_id]) : Investment.with_investors

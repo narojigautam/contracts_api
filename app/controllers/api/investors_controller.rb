@@ -1,4 +1,4 @@
-class Api::InvestorsController < ApplicationController
+class Api::InvestorsController < Api::ApiApplicationController
 
   def index
     @investors = Investor.all
@@ -13,6 +13,15 @@ class Api::InvestorsController < ApplicationController
   def show
     @investor = Investor.find(params[:id])
     render json: @investor
+  end
+
+  def destroy
+    @investor = Investor.find(params[:id])
+    if @investor.destroy
+      render json: {message: "OK"}, status: 200
+    else
+      render json: {message: "Could not delete"}, status: 403
+    end
   end
 
   private

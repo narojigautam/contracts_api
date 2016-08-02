@@ -1,7 +1,7 @@
-class Api::ExpensesController < ApplicationController
+class Api::ExpensesController < Api::ApiApplicationController
 
   def index
-    @expenses = params[:contract_id] ? Expense.where(contract_id: params[:contract_id]) : Expense.all
+    @expenses = params[:contract_id] ? Expense.where(contract_id: params[:contract_id]) : Expense.with_contracts
     render json: @expenses
   end
 
@@ -22,7 +22,7 @@ class Api::ExpensesController < ApplicationController
   private
 
   def expense_params
-    params.require(:expense).permit(:name, :description, :amount, :contract_id)
+    params.require(:expense).permit(:name, :description, :amount, :contract_id, :date)
   end
 
 end

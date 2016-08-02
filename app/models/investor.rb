@@ -1,3 +1,3 @@
 class Investor < ActiveRecord::Base
-  has_many :investments
+  has_many :investments, dependent: :destroy
 end

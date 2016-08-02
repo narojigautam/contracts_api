@@ -1,4 +1,4 @@
-class Api::ContractsController < ApplicationController
+class Api::ContractsController < Api::ApiApplicationController
 
   def index
     @contracts = Contract.all
