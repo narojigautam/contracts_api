@@ -11,7 +11,9 @@ Rails.application.routes.draw do
     resources :investments
     resources :contracts do
       resources :expenses, only: [:index]
+      resources :payments, only: [:index]
     end
     resources :expenses
+    resources :payments
   end
 end
